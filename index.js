@@ -16,7 +16,7 @@ app.use((err, req, res, next) => {  res.status(500).json({ statusCode:500,data:{
 
 
 app.get("/",(req,res)=>{
-    res.send("vercelapp");
+    res.send("api running");
  });
 
 const {signup} = require("./Controllers/signup");
