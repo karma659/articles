@@ -9,9 +9,15 @@ var connectDb = require("./models/connectionDB");
 connectDb()
 var port = process.env.PORT || 5000;
 
+ 
 app.use(express.json());
 app.use("/api", router);
 app.use((err, req, res, next) => {  res.status(500).json({ statusCode:500,data:{},error:"Internal Server Error" , message:'An unexpected error occurred on the server.' });  });
+
+
+app.get("/",(req,res)=>{
+    res.send("vercelapp");
+ });
 
 const {signup} = require("./Controllers/signup");
 const {login} = require("./Controllers/login");
